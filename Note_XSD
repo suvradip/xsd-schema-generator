@@ -1,0 +1,14 @@
+-----------------
+Note
+------------------
+After genaration of XSDs, we have to change some thing in XSD by manually. Here is the list of files which had to change .
+
+1. AngularGauge.xsd
+	line : 487.
+	fix: have to change the base="xs:nonNegativeInteger" to base="xs:integer" 
+
+	line : 495.
+	fix: have to change the base="xs:nonNegativeInteger" to base="xs:integer" 
+
+
+

@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="chart">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded" minOccurs="0">
+                <xs:element name="colorrange" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="color" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:attribute name="alpha">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:nonNegativeInteger">
+                                                <xs:minInclusive value="0"/>
+                                                <xs:maxInclusive value="100"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:attribute>
+                                    <xs:attribute name="borderalpha">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:nonNegativeInteger">
+                                                <xs:minInclusive value="0"/>
+                                                <xs:maxInclusive value="100"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:attribute>
+                                    <xs:attribute name="bordercolor" type="xs:hexBinary"/>
+                                    <xs:attribute name="code" type="xs:hexBinary"/>
+                                    <xs:attribute name="maxvalue" type="xs:string"/>
+                                    <xs:attribute name="minvalue" type="xs:string"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:choice>
+            <xs:attribute name="caption" type="xs:string"/>
+            <xs:attribute name="subcaption" type="xs:string"/>
+            <xs:attribute name="captionalignment">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="left"/>
+                        <xs:enumeration value="center"/>
+                        <xs:enumeration value="right"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="captionontop" type="xs:string"/>
+            <xs:attribute name="captionfontsize">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="72"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="subcaptionfontsize">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="72"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="captionfont" type="xs:string"/>
+            <xs:attribute name="subcaptionfont" type="xs:string"/>
+            <xs:attribute name="captionfontcolor" type="xs:hexBinary"/>
+            <xs:attribute name="subcaptionfontcolor" type="xs:hexBinary"/>
+            <xs:attribute name="captionfontbold" type="xs:string"/>
+            <xs:attribute name="subcaptionfontbold" type="xs:string"/>
+            <xs:attribute name="aligncaptionwithcanvas" type="xs:string"/>
+            <xs:attribute name="captionhorizontalpadding" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="animation" type="xs:string"/>
+            <xs:attribute name="clickurl" type="xs:anyURI"/>
+            <xs:attribute name="palette">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="1"/>
+                        <xs:maxInclusive value="5"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="palettethemecolor" type="xs:hexBinary"/>
+            <xs:attribute name="annrenderdelay" type="xs:string"/>
+            <xs:attribute name="showvalue" type="xs:string"/>
+            <xs:attribute name="autoscale" type="xs:string"/>
+            <xs:attribute name="manageresize" type="xs:string"/>
+            <xs:attribute name="origw" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="origh" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="showshadow" type="xs:string"/>
+            <xs:attribute name="showprintmenuitem" type="xs:string"/>
+            <xs:attribute name="refreshinstantly" type="xs:string"/>
+            <xs:attribute name="useellipseswhenoverflow" type="xs:string"/>
+            <xs:attribute name="hasrtltext" type="xs:string"/>
+            <xs:attribute name="basechartmessage" type="xs:string"/>
+            <xs:attribute name="basechartmessagefont" type="xs:string"/>
+            <xs:attribute name="basechartmessagefontsize" type="xs:string"/>
+            <xs:attribute name="basechartmessagecolor" type="xs:hexBinary"/>
+            <xs:attribute name="basechartmessageimagehalign">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="left"/>
+                        <xs:enumeration value="middle"/>
+                        <xs:enumeration value="right"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="basechartmessageimagevalign">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="top"/>
+                        <xs:enumeration value="middle"/>
+                        <xs:enumeration value="bottom"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="basechartmessageimagealpha">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="basechartmessageimagescale">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="300"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="loadmessage" type="xs:string"/>
+            <xs:attribute name="loadmessagefont" type="xs:string"/>
+            <xs:attribute name="loadmessagefontsize" type="xs:string"/>
+            <xs:attribute name="loadmessagecolor" type="xs:hexBinary"/>
+            <xs:attribute name="loadmessageimagehalign">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="left"/>
+                        <xs:enumeration value="middle"/>
+                        <xs:enumeration value="right"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="loadmessageimagevalign">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="top"/>
+                        <xs:enumeration value="middle"/>
+                        <xs:enumeration value="bottom"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="loadmessageimagealpha">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="loadmessageimagescale">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="300"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="typenotsupportedmessage" type="xs:string"/>
+            <xs:attribute name="typenotsupportedmessagefont" type="xs:string"/>
+            <xs:attribute name="typenotsupportedmessagefontsize" type="xs:string"/>
+            <xs:attribute name="typenotsupportedmessagecolor" type="xs:hexBinary"/>
+            <xs:attribute name="typenotsupportedmessageimagehalign">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="left"/>
+                        <xs:enumeration value="middle"/>
+                        <xs:enumeration value="right"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="typenotsupportedmessageimagevalign">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="top"/>
+                        <xs:enumeration value="middle"/>
+                        <xs:enumeration value="bottom"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="typenotsupportedmessageimagealpha">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="typenotsupportedmessageimagescale">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="300"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="rendererrormessage" type="xs:string"/>
+            <xs:attribute name="rendererrormessagefont" type="xs:string"/>
+            <xs:attribute name="rendererrormessagefontsize" type="xs:string"/>
+            <xs:attribute name="rendererrormessagecolor" type="xs:hexBinary"/>
+            <xs:attribute name="rendererrormessageimagehalign">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="left"/>
+                        <xs:enumeration value="middle"/>
+                        <xs:enumeration value="right"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="rendererrormessageimagevalign">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="top"/>
+                        <xs:enumeration value="middle"/>
+                        <xs:enumeration value="bottom"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="rendererrormessageimagealpha">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="rendererrormessageimagescale">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="300"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="dataloadstartmessage" type="xs:string"/>
+            <xs:attribute name="dataloadstartmessagefont" type="xs:string"/>
+            <xs:attribute name="dataloadstartmessagefontsize" type="xs:string"/>
+            <xs:attribute name="dataloadstartmessagecolor" type="xs:hexBinary"/>
+            <xs:attribute name="dataloadstartmessageimagehalign">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="left"/>
+                        <xs:enumeration value="middle"/>
+                        <xs:enumeration value="right"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="dataloadstartmessageimagevalign">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="top"/>
+                        <xs:enumeration value="middle"/>
+                        <xs:enumeration value="bottom"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="dataloadstartmessageimagealpha">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="dataloadstartmessageimagescale">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="300"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="dataemptymessage" type="xs:string"/>
+            <xs:attribute name="dataemptymessagefont" type="xs:string"/>
+            <xs:attribute name="dataemptymessagefontsize" type="xs:string"/>
+            <xs:attribute name="dataemptymessagecolor" type="xs:hexBinary"/>
+            <xs:attribute name="dataemptymessageimagehalign">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="left"/>
+                        <xs:enumeration value="middle"/>
+                        <xs:enumeration value="right"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="dataemptymessageimagevalign">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="top"/>
+                        <xs:enumeration value="middle"/>
+                        <xs:enumeration value="bottom"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="dataemptymessageimagealpha">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="dataemptymessageimagescale">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="300"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="dataloaderrormessage" type="xs:string"/>
+            <xs:attribute name="dataloaderrormessagefont" type="xs:string"/>
+            <xs:attribute name="dataloaderrormessagefontsize" type="xs:string"/>
+            <xs:attribute name="dataloaderrormessagecolor" type="xs:hexBinary"/>
+            <xs:attribute name="dataloaderrormessageimagehalign">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="left"/>
+                        <xs:enumeration value="middle"/>
+                        <xs:enumeration value="right"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="dataloaderrormessageimagevalign">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="top"/>
+                        <xs:enumeration value="middle"/>
+                        <xs:enumeration value="bottom"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="dataloaderrormessageimagealpha">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="dataloaderrormessageimagescale">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="300"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="datainvalidmessage" type="xs:string"/>
+            <xs:attribute name="datainvalidmessagefont" type="xs:string"/>
+            <xs:attribute name="datainvalidmessagefontsize" type="xs:string"/>
+            <xs:attribute name="datainvalidmessagecolor" type="xs:hexBinary"/>
+            <xs:attribute name="datainvalidmessageimagehalign">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="left"/>
+                        <xs:enumeration value="middle"/>
+                        <xs:enumeration value="right"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="datainvalidmessageimagevalign">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="top"/>
+                        <xs:enumeration value="middle"/>
+                        <xs:enumeration value="bottom"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="datainvalidmessageimagealpha">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="datainvalidmessageimagescale">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="300"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="setadaptivemin" type="xs:string"/>
+            <xs:attribute name="upperlimit" type="xs:string"/>
+            <xs:attribute name="lowerlimit" type="xs:string"/>
+            <xs:attribute name="lowerlimitdisplay" type="xs:string"/>
+            <xs:attribute name="upperlimitdisplay" type="xs:string"/>
+            <xs:attribute name="showtickmarks" type="xs:string"/>
+            <xs:attribute name="showtickvalues" type="xs:string"/>
+            <xs:attribute name="showlimits" type="xs:string"/>
+            <xs:attribute name="adjusttm" type="xs:string"/>
+            <xs:attribute name="ticksbelowgauge" type="xs:string"/>
+            <xs:attribute name="majortmnumber" type="xs:string"/>
+            <xs:attribute name="majortmcolor" type="xs:hexBinary"/>
+            <xs:attribute name="majortmalpha">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="majortmheight" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="majortmthickness" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="minortmnumber" type="xs:string"/>
+            <xs:attribute name="minortmcolor" type="xs:hexBinary"/>
+            <xs:attribute name="minortmalpha">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="minortmheight" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="minortmthickness" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="tickmarkdistance" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="tickvaluedistance" type="xs:integer"/>
+            <xs:attribute name="tickvaluestep" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="tickvaluedecimals" type="xs:string"/>
+            <xs:attribute name="forcetickvaluedecimals" type="xs:string"/>
+            <xs:attribute name="datastreamurl" type="xs:anyURI"/>
+            <xs:attribute name="refreshinterval" type="xs:string"/>
+            <xs:attribute name="datastamp" type="xs:string"/>
+            <xs:attribute name="showrtmenuitem" type="xs:string"/>
+            <xs:attribute name="gaugefillcolor" type="xs:hexBinary"/>
+            <xs:attribute name="showgaugeborder" type="xs:string"/>
+            <xs:attribute name="gaugebordercolor" type="xs:hexBinary"/>
+            <xs:attribute name="gaugeborderthickness" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="gaugeborderalpha">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="ledsize" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="ledgap" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="usesamefillcolor" type="xs:string"/>
+            <xs:attribute name="usesamefillbgcolor" type="xs:string"/>
+            <xs:attribute name="usemessagelog" type="xs:string"/>
+            <xs:attribute name="messagelogwpercent" type="xs:string"/>
+            <xs:attribute name="messageloghpercent" type="xs:string"/>
+            <xs:attribute name="messagelogshowtitle" type="xs:string"/>
+            <xs:attribute name="messagelogtitle" type="xs:string"/>
+            <xs:attribute name="messagelogcolor" type="xs:hexBinary"/>
+            <xs:attribute name="messagegoestolog" type="xs:string"/>
+            <xs:attribute name="messagegoestojs" type="xs:string"/>
+            <xs:attribute name="messagejshandler" type="xs:string"/>
+            <xs:attribute name="messagepassalltojs" type="xs:string"/>
+            <xs:attribute name="formatnumber" type="xs:string"/>
+            <xs:attribute name="numberprefix" type="xs:string"/>
+            <xs:attribute name="numbersuffix" type="xs:string"/>
+            <xs:attribute name="decimals" type="xs:string"/>
+            <xs:attribute name="forcedecimals" type="xs:string"/>
+            <xs:attribute name="formatnumberscale" type="xs:string"/>
+            <xs:attribute name="defaultnumberscale" type="xs:string"/>
+            <xs:attribute name="numberscaleunit" type="xs:string"/>
+            <xs:attribute name="numberscalevalue" type="xs:string"/>
+            <xs:attribute name="forcenumberscale" type="xs:string"/>
+            <xs:attribute name="scalerecursively" type="xs:string"/>
+            <xs:attribute name="maxscalerecursion" type="xs:string"/>
+            <xs:attribute name="scaleseparator" type="xs:string"/>
+            <xs:attribute name="decimalseparator" type="xs:string"/>
+            <xs:attribute name="thousandseparator" type="xs:string"/>
+            <xs:attribute name="thousandseparatorposition" type="xs:string"/>
+            <xs:attribute name="indecimalseparator" type="xs:string"/>
+            <xs:attribute name="inthousandseparator" type="xs:string"/>
+            <xs:attribute name="bgcolor" type="xs:string"/>
+            <xs:attribute name="bgalpha">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="bgratio" type="xs:string"/>
+            <xs:attribute name="bgangle">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="360"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="showborder" type="xs:string"/>
+            <xs:attribute name="bordercolor" type="xs:hexBinary"/>
+            <xs:attribute name="borderthickness" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="borderalpha">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="bgimage" type="xs:string"/>
+            <xs:attribute name="bgimagealpha">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="bgimagedisplaymode">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="stretch"/>
+                        <xs:enumeration value="tile"/>
+                        <xs:enumeration value="fit"/>
+                        <xs:enumeration value="fill"/>
+                        <xs:enumeration value="center"/>
+                        <xs:enumeration value="none"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="bgimagevalign">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="top"/>
+                        <xs:enumeration value="middle"/>
+                        <xs:enumeration value="bottom"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="bgimagehalign">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="left"/>
+                        <xs:enumeration value="middle"/>
+                        <xs:enumeration value="right"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="bgimagescale">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="300"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="logourl" type="xs:string"/>
+            <xs:attribute name="logoposition">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="TL"/>
+                        <xs:enumeration value="TR"/>
+                        <xs:enumeration value="BL"/>
+                        <xs:enumeration value="BR"/>
+                        <xs:enumeration value="CC"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="logoalpha">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="logoscale">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="logolink" type="xs:string"/>
+            <xs:attribute name="valuefont" type="xs:string"/>
+            <xs:attribute name="valuefontcolor" type="xs:hexBinary"/>
+            <xs:attribute name="valuefontsize">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="72"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="valuefontbold" type="xs:string"/>
+            <xs:attribute name="valuefontitalic" type="xs:string"/>
+            <xs:attribute name="valuebgcolor" type="xs:hexBinary"/>
+            <xs:attribute name="valuebordercolor" type="xs:hexBinary"/>
+            <xs:attribute name="valuealpha">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="valuefontalpha">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="valuebgalpha">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="valueborderalpha">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="valueborderthickness" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="valueborderpadding" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="valueborderradius" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="valueborderdashed" type="xs:string"/>
+            <xs:attribute name="valueborderdashgap" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="valueborderdashlen" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="basefont" type="xs:string"/>
+            <xs:attribute name="basefontsize" type="xs:string"/>
+            <xs:attribute name="basefontcolor" type="xs:hexBinary"/>
+            <xs:attribute name="showtooltip" type="xs:string"/>
+            <xs:attribute name="tooltipbgcolor" type="xs:hexBinary"/>
+            <xs:attribute name="tooltipcolor" type="xs:hexBinary"/>
+            <xs:attribute name="tooltipbordercolor" type="xs:hexBinary"/>
+            <xs:attribute name="showtooltipshadow" type="xs:string"/>
+            <xs:attribute name="chartleftmargin" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="chartrightmargin" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="charttopmargin" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="chartbottommargin" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="valuepadding" type="xs:nonNegativeInteger"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

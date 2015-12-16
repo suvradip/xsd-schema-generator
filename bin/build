@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+
+#jshint scripts/
+#jasmine-node scripts/
+phantomjs scripts/genearate.js 'jsonfilesforxsdgenerator/attributes'
+
