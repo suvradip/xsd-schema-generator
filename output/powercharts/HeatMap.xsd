@@ -6,7 +6,7 @@
             <xs:choice maxOccurs="unbounded" minOccurs="0">
                 <xs:element name="rows" minOccurs="0" maxOccurs="unbounded">
                     <xs:complexType>
-                        <xs:sequence maxOccurs="unbounded" minOccurs="0">
+                        <xs:sequence>
                             <xs:element name="row" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:attribute name="id" type="xs:string"/>
@@ -19,7 +19,7 @@
                 </xs:element>
                 <xs:element name="columns" minOccurs="0" maxOccurs="unbounded">
                     <xs:complexType>
-                        <xs:sequence maxOccurs="unbounded" minOccurs="0">
+                        <xs:sequence>
                             <xs:element name="column" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:attribute name="id" type="xs:string"/>
@@ -32,10 +32,11 @@
                 </xs:element>
                 <xs:element name="dataset" minOccurs="0" maxOccurs="unbounded">
                     <xs:complexType>
-                        <xs:sequence maxOccurs="unbounded" minOccurs="0">
+                        <xs:sequence>
                             <xs:element name="set" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:attribute name="rowid" type="xs:string"/>
+                                    <xs:attribute name="categoryid" type="xs:string"/>
                                     <xs:attribute name="columnid" type="xs:string"/>
                                     <xs:attribute name="colorrangelabel" type="xs:string"/>
                                     <xs:attribute name="value" type="xs:string"/>
@@ -63,7 +64,7 @@
                 </xs:element>
                 <xs:element name="colorrange" minOccurs="0" maxOccurs="unbounded">
                     <xs:complexType>
-                        <xs:sequence maxOccurs="unbounded" minOccurs="0">
+                        <xs:sequence>
                             <xs:element name="color" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:attribute name="code" type="xs:hexBinary"/>

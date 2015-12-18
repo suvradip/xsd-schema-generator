@@ -1053,8 +1053,6 @@
                 </xs:simpleType>
             </xs:attribute>
             <xs:attribute name="forceganttwidthpercent" type="xs:string"/>
-            <xs:attribute name="caption" type="xs:string"/>
-            <xs:attribute name="subcaption" type="xs:string"/>
             <xs:attribute name="showtaskstartdate" type="xs:string"/>
             <xs:attribute name="showtaskenddate" type="xs:string"/>
             <xs:attribute name="showtasklabels" type="xs:string"/>

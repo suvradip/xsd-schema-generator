@@ -59,55 +59,56 @@
                                     <xs:attribute name="link" type="xs:string"/>
                                 </xs:complexType>
                             </xs:element>
+                            <xs:element name="vline" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:attribute name="vline" type="xs:string"/>
+                                <xs:attribute name="color" type="xs:hexBinary"/>
+                                <xs:attribute name="thickness" type="xs:nonNegativeInteger"/>
+                                <xs:attribute name="alpha">
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:nonNegativeInteger">
+                                            <xs:minInclusive value="0"/>
+                                            <xs:maxInclusive value="100"/>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
+                                <xs:attribute name="dashed" type="xs:string"/>
+                                <xs:attribute name="dashlen" type="xs:nonNegativeInteger"/>
+                                <xs:attribute name="dashgap" type="xs:nonNegativeInteger"/>
+                                <xs:attribute name="label" type="xs:string"/>
+                                <xs:attribute name="showlabelborder" type="xs:string"/>
+                                <xs:attribute name="lineposition" type="xs:float"/>
+                                <xs:attribute name="labelposition" type="xs:float"/>
+                                <xs:attribute name="labelhalign">
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                            <xs:enumeration value="left"/>
+                                            <xs:enumeration value="center"/>
+                                            <xs:enumeration value="right"/>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
+                                <xs:attribute name="labelvalign">
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                            <xs:enumeration value="top"/>
+                                            <xs:enumeration value="middle"/>
+                                            <xs:enumeration value="bottom"/>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
+                             </xs:complexType>
+                            </xs:element>
                         </xs:sequence>
                         <xs:attribute name="font" type="xs:string"/>
                         <xs:attribute name="fontcolor" type="xs:hexBinary"/>
                         <xs:attribute name="fontsize" type="xs:string"/>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="vline" minOccurs="0" maxOccurs="unbounded">
-                    <xs:complexType>
-                        <xs:attribute name="vline" type="xs:string"/>
-                        <xs:attribute name="color" type="xs:hexBinary"/>
-                        <xs:attribute name="thickness" type="xs:nonNegativeInteger"/>
-                        <xs:attribute name="alpha">
-                            <xs:simpleType>
-                                <xs:restriction base="xs:nonNegativeInteger">
-                                    <xs:minInclusive value="0"/>
-                                    <xs:maxInclusive value="100"/>
-                                </xs:restriction>
-                            </xs:simpleType>
-                        </xs:attribute>
-                        <xs:attribute name="dashed" type="xs:string"/>
-                        <xs:attribute name="dashlen" type="xs:nonNegativeInteger"/>
-                        <xs:attribute name="dashgap" type="xs:nonNegativeInteger"/>
-                        <xs:attribute name="label" type="xs:string"/>
-                        <xs:attribute name="showlabelborder" type="xs:string"/>
-                        <xs:attribute name="lineposition" type="xs:float"/>
-                        <xs:attribute name="labelposition" type="xs:float"/>
-                        <xs:attribute name="labelhalign">
-                            <xs:simpleType>
-                                <xs:restriction base="xs:string">
-                                    <xs:enumeration value="left"/>
-                                    <xs:enumeration value="center"/>
-                                    <xs:enumeration value="right"/>
-                                </xs:restriction>
-                            </xs:simpleType>
-                        </xs:attribute>
-                        <xs:attribute name="labelvalign">
-                            <xs:simpleType>
-                                <xs:restriction base="xs:string">
-                                    <xs:enumeration value="top"/>
-                                    <xs:enumeration value="middle"/>
-                                    <xs:enumeration value="bottom"/>
-                                </xs:restriction>
-                            </xs:simpleType>
-                        </xs:attribute>
-                    </xs:complexType>
-                </xs:element>
+               
                 <xs:element name="dataset" minOccurs="0" maxOccurs="unbounded">
                     <xs:complexType>
-                        <xs:sequence maxOccurs="unbounded" minOccurs="0">
+                        <xs:sequence>
                             <xs:element name="set" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:attribute name="anchoralpha">
@@ -203,7 +204,7 @@
                 </xs:element>
                 <xs:element name="trendlines" minOccurs="0" maxOccurs="unbounded">
                     <xs:complexType>
-                        <xs:sequence maxOccurs="unbounded" minOccurs="0">
+                        <xs:sequence>
                             <xs:element name="line" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:attribute name="startvalue" type="xs:float"/>

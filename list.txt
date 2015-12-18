@@ -1,0 +1,362 @@
+
+    "name": "Area 2D",
+    "json": "Area2D",
+    
+    
+    "name": "Bar 2D",
+    "json": "Bar2D",
+    
+    
+    "name": "Bar 3D",
+    "json": "Bar3D",
+    
+    
+    "name": "Box and Whisker 2D",
+    "json": "BoxandWhisker2D",
+    
+    
+    "name": "Bubble Chart",
+    "json": "Bubble",
+    
+    
+    "name": "Candlestick Chart",
+    "json": "Candlestick",
+    
+    
+    "name": "Column 2D",
+    "json": "Column2D",
+    
+    
+    "name": "Column 3D",
+    "json": "Column3D",
+    
+    
+    "name": "Doughnut 2D",
+    "json": "Doughnut2D",
+    
+    
+    "name": "Doughnut 3D",
+    "json": "Doughnut3D",
+    
+    
+    "name": "Drag Node Chart",
+    "json": "DragNode",
+    
+    
+    "name": "Drag-able Area 2D Chart",
+    "json": "DragArea",
+    
+    
+    "name": "Drag-able Column 2D Chart",
+    "json": "DragCol2D",
+    
+    
+    "name": "Drag-able Line 2D Chart",
+    "json": "DragLine",
+    
+    
+    "name": "Error Bar Chart",
+    "json": "ErrorBar",
+    
+    
+    "name": "Error Line 2D Chart",
+    "json": "ErrorLine",
+    
+    
+    "name": "Error Scatter Chart",
+    "json": "ErrorScatter",
+    
+    
+    "name": "Funnel Chart",
+    "json": "Funnel",
+    
+    
+    "name": "Gantt Chart",
+    "json": "Gantt",
+    
+    
+    "name": "Heat Map Chart",
+    "json": "HeatMap",
+    
+    
+    "name": "Horizontal Bullet Graph",
+    "json": "HBullet",
+    
+    
+    "name": "Horizontal LED",
+    "json": "Horizontal",
+    
+    
+    "name": "Inverse Y-axis Area Chart",
+    "json": "InverseArea",
+    
+    
+    "name": "Inverse Y-axis Column 2D Chart",
+    "json": "InverseColumn",
+    
+    
+    "name": "Inverse Y-axis Line 2D Chart",
+    "json": "InverseLine",
+    
+    
+    "name": "Kagi Chart",
+    "json": "Kagi",
+    
+    
+    "name": "Line 2D",
+    "json": "Line2D",
+    
+    
+    "name": "Logarithmic Column 2D Chart",
+    "json": "LogColumn2D",
+    
+    
+    "name": "Logarithmic Line 2D Chart",
+    "json": "LogLine",
+    
+    
+    "name": "Marimekko",
+    "json": "Marimekko",
+    
+    
+    "name": "Multi-axis Line Chart",
+    "json": "MALine",
+    
+    
+    "name": "Multi-level Pie Chart",
+    "json": "MultiLevelPie",
+    
+    
+    "name": "Multi-series 2D Dual Y Combination Chart (Column + Line + Area)",
+    "json": "Combi2DDY",
+    
+    
+    "name": "Multi-series 2D Single Y Combination Chart (Column + Line + Area)",
+    "json": "Combi2D",
+    
+    
+    "name": "Multi-series 3D Single Y Combination Chart (Column + Line + Area)",
+    "json": "Combi3D",
+    
+    
+    "name": "Multi-series Area 2D",
+    "json": "MSArea2D",
+    
+    
+    "name": "Multi-series Bar 2D",
+    "json": "MSBar2D",
+    
+    
+    "name": "Multi-series Bar 3D",
+    "json": "MSBar3D",
+    
+    
+    "name": "Multi-series Column 2D",
+    "json": "MSColumn2D",
+    
+    
+    "name": "Multi-series Column 3D",
+    "json": "MSColumn3D",
+    
+    
+    "name": "Multi-series Column 3D + Line Dual Y Axis",
+    "json": "MSCol3DLineDY",
+    
+    
+    "name": "Multi-series Column 3D + Line Single Y-axis",
+    "json": "Col3DLine",
+    
+    
+    "name": "Multi-series Line 2D",
+    "json": "MSLine",
+    
+    
+    "name": "Multi-series Spline",
+    "json": "MSSpline",
+    
+    
+    "name": "Multi-series Spline Area",
+    "json": "MSSplineArea",
+    
+    
+    "name": "Multi-series Stacked Column 2D",
+    "json": "MSStCol",
+    
+    
+    "name": "Multi-series Stacked Column 2D + Line Dual Y Axis",
+    "json": "MSStColLineDY",
+    
+    
+    "name": "Pareto 2D",
+    "json": "Pareto2D",
+    
+    
+    "name": "Pareto 3D",
+    "json": "Pareto3D",
+    
+    
+    "name": "Pie 2D",
+    "json": "Pie2D",
+    
+    
+    "name": "Pie 3D",
+    "json": "Pie3D",
+    
+    
+    "name": "Pyramid Chart",
+    "json": "Pyramid",
+    
+    
+    "name": "Radar Chart",
+    "json": "Radar",
+    
+    
+    "name": "Real-time Angular",
+    "json": "Angular",
+    
+    
+    "name": "Real-time Area",
+    "json": "RealTimeArea",
+    
+    
+    "name": "Real-time Bulb",
+    "json": "Bulb",
+    
+    
+    "name": "Real-time Column",
+    "json": "RealTimeColumn",
+    
+    
+    "name": "Real-time Cylinder",
+    "json": "Cylinder",
+    
+    
+    "name": "Real-time Horizontal Linear",
+    "json": "Linear",
+    
+    
+    "name": "Real-time Line",
+    "json": "RealTimeLine",
+    
+    
+    "name": "Real-time Line (Dual Y)",
+    "json": "RealTimeLineDY",
+    
+    
+    "name": "Real-time Stacked Area",
+    "json": "RealTimeStackedArea",
+    
+    
+    "name": "Real-time Stacked Column",
+    "json": "RealTimeStackedColumn",
+    
+    
+    "name": "Real-time Thermometer",
+    "json": "Thermometer",
+    
+    
+    "name": "Scatter Chart",
+    "json": "Scatter",
+    
+    
+    "name": "Scroll Area 2D",
+    "json": "ScrollArea2D",
+    
+    
+    "name": "Scroll Column 2D",
+    "json": "ScrollColumn2D",
+    
+    
+    "name": "Scroll Combination 2D (Dual Y)",
+    "json": "ScrollCombiDY2D",
+    
+    
+    "name": "Scroll Combination 2D (Single Y)",
+    "json": "ScrollCombi2D",
+    
+    
+    "name": "Scroll Line 2D",
+    "json": "ScrollLine2D",
+    
+    
+    "name": "Scroll Stacked Column 2D",
+    "json": "ScrollStackedCol2D",
+    
+    
+    "name": "Select-scatter Chart",
+    "json": "SelectScatter",
+    
+    
+    "name": "Single-series Spline 2D",
+    "json": "Spline",
+    
+    
+    "name": "Single-series Spline Area 2D",
+    "json": "SplineArea",
+    
+    
+    "name": "Spark Column",
+    "json": "SparkColumn",
+    
+    
+    "name": "Spark Line",
+    "json": "SparkLine",
+    
+    
+    "name": "Spark Win/Loss",
+    "json": "SparkWL",
+    
+    
+    "name": "Stacked 2D Column + Line Single Y-axis",
+    "json": "StCol2DLine",
+    
+    
+    "name": "Stacked 3D Column + Line Single Y-axis",
+    "json": "StCol3DLine",
+    
+    
+    "name": "Stacked Area 2D",
+    "json": "StArea2D",
+    
+    
+    "name": "Stacked Bar 2D",
+    "json": "StBar2D",
+    
+    
+    "name": "Stacked Bar 3D",
+    "json": "StackedBar3D",
+    
+    
+    "name": "Stacked Column 2D",
+    "json": "StCol2D",
+    
+    
+    "name": "Stacked Column 3D",
+    "json": "StCol3D",
+    
+    
+    "name": "Stacked Column 3D + Line Dual Y Axis",
+    "json": "StCol3DLineDY",
+    
+    
+    "name": "Step Line Charts",
+    "json": "MSStepLine",
+    
+    
+    "name": "Vertical Bullet Graph",
+    "json": "VBullet",
+    
+    
+    "name": "Vertical LED",
+    "json": "Vertical",
+    
+    
+    "name": "Waterfall / Cascade Chart",
+    "json": "Waterfall",
+    
+    
+    "name": "Zoom Line",
+    "json": "ZoomLine",
+    
+    
+
