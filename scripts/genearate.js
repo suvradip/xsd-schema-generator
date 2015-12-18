@@ -159,5 +159,42 @@ scanDirectory(folderPath);
 console.log('');
 //Ignoring jshint as this phantomjs is the framework
 /* jshint ignore:start */
+
+
+
+var fs = require('fs');
+var DIRECTORIES = ['output/fusioncharts', 'output/fusionwidgets', 'output/powercharts'];
+
+for (var i = 0; i <DIRECTORIES.length; i++) {
+
+ var files = fs.list(DIRECTORIES[i]);
+
+ for(var j=2; j<files.length; j++){
+
+    var fileData = fs.read(DIRECTORIES[i] + '/' + files[j]);
+    fileData = fileData.toString().replace('<xs:complexType>\n            <xs:sequence maxOccurs="unbounded" minOccurs="0">', '<xs:complexType>\n            <xs:choice maxOccurs="unbounded" minOccurs="0">');
+    fileData = fileData.toString().replace('</xs:sequence>\n            <xs:attribute name="animation" type="xs:string"/>','</xs:choice>\n            <xs:attribute name="animation" type="xs:string"/>');
+    fileData = fileData.toString().replace('</xs:sequence>\n            <xs:attribute name="numvisibleplot">','</xs:choice>\n            <xs:attribute name="numvisibleplot">');
+    fileData = fileData.toString().replace('</xs:sequence>\n            <xs:attribute name="palette">','</xs:choice>\n            <xs:attribute name="palette">');
+    fileData = fileData.toString().replace('</xs:sequence>\n            <xs:attribute name="caption" type="xs:string"/>','</xs:choice>\n            <xs:attribute name="caption" type="xs:string"/>');
+    fileData = fileData.toString().replace('</xs:sequence>\n            <xs:attribute name="viewmode" type="xs:string"/>','</xs:choice>\n            <xs:attribute name="viewmode" type="xs:string"/>');
+    fileData = fileData.toString().replace('</xs:sequence>\n            <xs:attribute name="base" type="xs:string"/>','</xs:choice>\n            <xs:attribute name="base" type="xs:string"/>');
+    fileData = fileData.toString().replace('</xs:sequence>\n            <xs:attribute name="allowselection" type="xs:string"/>','</xs:choice>\n            <xs:attribute name="allowselection" type="xs:string"/>');
+
+    fs.write(DIRECTORIES[i] + '/' + files[j], fileData);
+
+    }
+}
+
+
+
+
+
 phantom.exit();
+
+
+
+
+
+
 /* jshint ignore:end */

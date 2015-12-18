@@ -23,7 +23,7 @@ fileData = fileData.toString().replace(/"'P' or 'S'"/gm, '"P, S"');
 fileData = fileData.toString().replace(/"'W', 'L', or 'D'"/gm, '"W, L, D"');
 fileData = fileData.toString().replace(/"'mm\/dd\/yyyy' or 'dd\/mm\/yyyy' or 'yyyy\/mm\/dd' or 'mm-dd-yyyy' or 'dd-mm-yyyy' or 'yyyy-mm-dd'"/gm, '"mm/dd/yyyy, dd/mm/yyyy, yyyy/mm/dd, mm-dd-yyyy, dd-mm-yyyy, yyyy-mm-dd"');
 fileData = fileData.toString().replace(/"'mm\/dd\/yyyy'"/gm, '"mm/dd/yyyy"');
-
+fileData = fileData.toString().replace(/"COLUMN, AREA or LINE"/gm, '"Column, Area, Line"');
 
 
 fileData = JSON.parse(fileData);
@@ -55,7 +55,15 @@ for(var i=0; i<fileData.length; i++)
 			obj2.type = 'Number';
 			delete obj2.range;
 		}
-	}	
+		if((file === 'Gantt.json') && (obj2.name.toLowerCase() === 'height' || 
+			obj2.name.toLowerCase() === 'toppadding')){
+			obj2.type = 'in pixels or in percent';
+			}
+		if(obj2.name.toLowerCase() === 'numvisibleplot'){
+			obj2.range = '2-1000';
+			}		
+		} //end of for loop
+
 }	
 
 fs.writeFileSync(DIRECTORIES + '/' + file, JSON.stringify(fileData, null, 4),  'utf-8');

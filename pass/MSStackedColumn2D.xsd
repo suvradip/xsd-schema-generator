@@ -105,37 +105,43 @@
                         <xs:attribute name="fontsize" type="xs:string"/>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="dataset" minOccurs="0" maxOccurs="unbounded">
-                    <xs:complexType>
-                        <xs:sequence maxOccurs="unbounded" minOccurs="0">
-                            <xs:element name="set" minOccurs="0" maxOccurs="unbounded">
-                                <xs:complexType>
-                                    <xs:attribute name="alpha">
-                                        <xs:simpleType>
-                                            <xs:restriction base="xs:nonNegativeInteger">
-                                                <xs:minInclusive value="0"/>
-                                                <xs:maxInclusive value="100"/>
-                                            </xs:restriction>
-                                        </xs:simpleType>
-                                    </xs:attribute>
-                                    <xs:attribute name="color" type="xs:hexBinary"/>
-                                    <xs:attribute name="dashed" type="xs:string"/>
-                                    <xs:attribute name="displayvalue" type="xs:string"/>
-                                    <xs:attribute name="link" type="xs:string"/>
-                                    <xs:attribute name="showvalue" type="xs:string"/>
-                                    <xs:attribute name="tooltext" type="xs:string"/>
-                                    <xs:attribute name="value" type="xs:string"/>
-                                </xs:complexType>
-                            </xs:element>
-                        </xs:sequence>
-                        <xs:attribute name="alpha" type="xs:string"/>
-                        <xs:attribute name="color" type="xs:hexBinary"/>
-                        <xs:attribute name="dashed" type="xs:string"/>
-                        <xs:attribute name="includeinlegend" type="xs:string"/>
-                        <xs:attribute name="ratio" type="xs:string"/>
-                        <xs:attribute name="seriesname" type="xs:string"/>
-                        <xs:attribute name="showvalues" type="xs:string"/>
-                    </xs:complexType>
+                 <xs:element name="dataset" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>                
+                    <xs:element name="dataset" minOccurs="0" maxOccurs="unbounded">
+                        <xs:complexType>
+                            <xs:sequence maxOccurs="unbounded" minOccurs="0">
+                                <xs:element name="set" minOccurs="0" maxOccurs="unbounded">
+                                    <xs:complexType>
+                                        <xs:attribute name="alpha">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:nonNegativeInteger">
+                                                    <xs:minInclusive value="0"/>
+                                                    <xs:maxInclusive value="100"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:attribute>
+                                        <xs:attribute name="color" type="xs:hexBinary"/>
+                                        <xs:attribute name="dashed" type="xs:string"/>
+                                        <xs:attribute name="displayvalue" type="xs:string"/>
+                                        <xs:attribute name="link" type="xs:string"/>
+                                        <xs:attribute name="showvalue" type="xs:string"/>
+                                        <xs:attribute name="tooltext" type="xs:string"/>
+                                        <xs:attribute name="value" type="xs:string"/>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:sequence>
+                            <xs:attribute name="alpha" type="xs:string"/>
+                            <xs:attribute name="color" type="xs:hexBinary"/>
+                            <xs:attribute name="dashed" type="xs:string"/>
+                            <xs:attribute name="includeinlegend" type="xs:string"/>
+                            <xs:attribute name="ratio" type="xs:string"/>
+                            <xs:attribute name="seriesname" type="xs:string"/>
+                            <xs:attribute name="showvalues" type="xs:string"/>
+                        </xs:complexType>
+                    </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
                 </xs:element>
                 <xs:element name="trendlines" minOccurs="0" maxOccurs="unbounded">
                     <xs:complexType>
@@ -160,6 +166,7 @@
                                     <xs:attribute name="dashed" type="xs:string"/>
                                     <xs:attribute name="dashlen" type="xs:nonNegativeInteger"/>
                                     <xs:attribute name="dashgap" type="xs:nonNegativeInteger"/>
+                                    <xs:attribute name="valueonright" type="xs:string"/>
                                     <xs:attribute name="tooltext" type="xs:string"/>
                                 </xs:complexType>
                             </xs:element>
@@ -178,6 +185,21 @@
             </xs:attribute>
             <xs:attribute name="palettecolors" type="xs:string"/>
             <xs:attribute name="showlabels" type="xs:string"/>
+            <xs:attribute name="maxlabelheight" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="labeldisplay">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="AUTO"/>
+                        <xs:enumeration value="WRAP"/>
+                        <xs:enumeration value="STAGGER"/>
+                        <xs:enumeration value="ROTATE"/>
+                        <xs:enumeration value="NONE"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="useellipseswhenoverflow" type="xs:string"/>
+            <xs:attribute name="rotatelabels" type="xs:string"/>
+            <xs:attribute name="slantlabels" type="xs:string"/>
             <xs:attribute name="labelstep">
                 <xs:simpleType>
                     <xs:restriction base="xs:nonNegativeInteger">
@@ -185,17 +207,15 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:attribute>
-            <xs:attribute name="maxlabelwidthpercent">
+            <xs:attribute name="staggerlines">
                 <xs:simpleType>
                     <xs:restriction base="xs:nonNegativeInteger">
-                        <xs:minInclusive value="1"/>
-                        <xs:maxInclusive value="100"/>
+                        <xs:minInclusive value="2"/>
                     </xs:restriction>
                 </xs:simpleType>
             </xs:attribute>
-            <xs:attribute name="useellipseswhenoverflow" type="xs:string"/>
             <xs:attribute name="showvalues" type="xs:string"/>
-            <xs:attribute name="placevaluesinside" type="xs:string"/>
+            <xs:attribute name="rotatevalues" type="xs:string"/>
             <xs:attribute name="showyaxisvalues" type="xs:string"/>
             <xs:attribute name="showlimits" type="xs:string"/>
             <xs:attribute name="showdivlinevalues" type="xs:string"/>
@@ -208,14 +228,16 @@
             </xs:attribute>
             <xs:attribute name="showshadow" type="xs:string"/>
             <xs:attribute name="adjustdiv" type="xs:string"/>
+            <xs:attribute name="rotateyaxisname" type="xs:string"/>
+            <xs:attribute name="yaxisnamewidth" type="xs:nonNegativeInteger"/>
             <xs:attribute name="clickurl" type="xs:string"/>
             <xs:attribute name="clickurloverridesplotlinks" type="xs:string"/>
-            <xs:attribute name="rotatexaxisname" type="xs:string"/>
-            <xs:attribute name="xaxisnamewidth" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="showsum" type="xs:string"/>
             <xs:attribute name="yaxisminvalue" type="xs:nonNegativeInteger"/>
             <xs:attribute name="yaxismaxvalue" type="xs:nonNegativeInteger"/>
-            <xs:attribute name="setadaptiveymin" type="xs:string"/>
-            <xs:attribute name="centerxaxisname" type="xs:string"/>
+            <xs:attribute name="stack100percent" type="xs:string"/>
+            <xs:attribute name="showpercentvalues" type="xs:string"/>
+            <xs:attribute name="showpercentintooltip" type="xs:string"/>
             <xs:attribute name="hasrtltext" type="xs:string"/>
             <xs:attribute name="basechartmessage" type="xs:string"/>
             <xs:attribute name="basechartmessagefont" type="xs:string"/>
@@ -928,9 +950,9 @@
                 </xs:simpleType>
             </xs:attribute>
             <xs:attribute name="showzeroplanevalue" type="xs:string"/>
-            <xs:attribute name="showalternatevgridcolor" type="xs:string"/>
-            <xs:attribute name="alternatevgridcolor" type="xs:hexBinary"/>
-            <xs:attribute name="alternatevgridalpha">
+            <xs:attribute name="showalternatehgridcolor" type="xs:string"/>
+            <xs:attribute name="alternatehgridcolor" type="xs:hexBinary"/>
+            <xs:attribute name="alternatehgridalpha">
                 <xs:simpleType>
                     <xs:restriction base="xs:nonNegativeInteger">
                         <xs:minInclusive value="0"/>
@@ -1121,7 +1143,6 @@
             <xs:attribute name="yaxisnamepadding" type="xs:nonNegativeInteger"/>
             <xs:attribute name="yaxisvaluespadding" type="xs:nonNegativeInteger"/>
             <xs:attribute name="labelpadding" type="xs:nonNegativeInteger"/>
-            <xs:attribute name="valuepadding" type="xs:nonNegativeInteger"/>
             <xs:attribute name="plotspacepercent">
                 <xs:simpleType>
                     <xs:restriction base="xs:nonNegativeInteger">

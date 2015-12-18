@@ -4,7 +4,7 @@
         "attrs": [
             {
                 "description": "This attribute lets you control how the number of columns to show in the visible area of the scroll pane. For example, if you're plotting a chart with 10 columns each in 3 dataset, totaling to 30 columns, and you wish to show only 10 columns in the visible area, set this attribute as 10. You will now see only 10 columns in the chart - rest of the columns will be visible upon scrolling. If you want to show all the columns on the chart irrespective of the number of data points in your XML data document, set this attribute as 0.",
-                "range": "2-number of data items present in XML",
+                "range": "2-1000",
                 "type": "Number",
                 "name": "numVisiblePlot"
             },
@@ -2647,7 +2647,7 @@
         "attrs": [
             {
                 "description": "This attribute defines what the particular dataset will be plotted as. Valid values are COLUMN, AREA or LINE.",
-                "range": "COLUMN, AREA or LINE",
+                "range": "Column, Area, Line",
                 "type": "String",
                 "name": "renderAs"
             },

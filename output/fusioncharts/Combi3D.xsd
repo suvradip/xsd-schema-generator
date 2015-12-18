@@ -6,7 +6,7 @@
             <xs:choice maxOccurs="unbounded" minOccurs="0">
                 <xs:element name="categories" minOccurs="0" maxOccurs="unbounded">
                     <xs:complexType>
-                        <xs:sequence>
+                        <xs:sequence maxOccurs="unbounded" minOccurs="0">
                             <xs:element name="category" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:attribute name="label" type="xs:string"/>
@@ -67,7 +67,7 @@
                 </xs:element>
                 <xs:element name="dataset" minOccurs="0" maxOccurs="unbounded">
                     <xs:complexType>
-                        <xs:sequence>
+                        <xs:sequence maxOccurs="unbounded" minOccurs="0">
                             <xs:element name="set" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:attribute name="value" type="xs:string"/>
@@ -80,8 +80,9 @@
                         <xs:attribute name="renderas">
                             <xs:simpleType>
                                 <xs:restriction base="xs:string">
-                                    <xs:enumeration value="COLUMN"/>
-                                    <xs:enumeration value="AREA or LINE"/>
+                                    <xs:enumeration value="Column"/>
+                                    <xs:enumeration value="Area"/>
+                                    <xs:enumeration value="Line"/>
                                 </xs:restriction>
                             </xs:simpleType>
                         </xs:attribute>
@@ -93,7 +94,7 @@
                 </xs:element>
                 <xs:element name="trendlines" minOccurs="0" maxOccurs="unbounded">
                     <xs:complexType>
-                        <xs:sequence>
+                        <xs:sequence maxOccurs="unbounded" minOccurs="0">
                             <xs:element name="line" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:attribute name="startvalue" type="xs:float"/>

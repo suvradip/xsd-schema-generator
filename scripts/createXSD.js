@@ -391,7 +391,7 @@ var generateXSDString = function(dataObj) {
         occurStr = (occurStr === undefined) ? occurStr = '' : occurStr;
         XSDString += '<xs:element name="' + tempDataObj.name + '"' + occurStr + '><xs:complexType>';
         totalKeys = Object.keys(tempDataObj); 
-        (totalKeys.length > 2) ? (XSDString += '<xs:sequence>') : (XSDString += '');
+        (totalKeys.length > 2) ? (XSDString += '<xs:sequence maxOccurs="unbounded" minOccurs="0">') : (XSDString += '');
         //Adding the inner objects later in a recursive way
         for (key in tempDataObj) {
             if (tempDataObj.hasOwnProperty(key)) {

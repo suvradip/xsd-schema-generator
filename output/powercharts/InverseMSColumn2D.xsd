@@ -6,7 +6,7 @@
             <xs:choice maxOccurs="unbounded" minOccurs="0">
                 <xs:element name="categories" minOccurs="0" maxOccurs="unbounded">
                     <xs:complexType>
-                        <xs:sequence>
+                        <xs:sequence maxOccurs="unbounded" minOccurs="0">
                             <xs:element name="category" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:attribute name="label" type="xs:string"/>
@@ -107,7 +107,7 @@
                 </xs:element>
                 <xs:element name="dataset" minOccurs="0" maxOccurs="unbounded">
                     <xs:complexType>
-                        <xs:sequence>
+                        <xs:sequence maxOccurs="unbounded" minOccurs="0">
                             <xs:element name="set" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:attribute name="alpha">
@@ -140,7 +140,7 @@
                 </xs:element>
                 <xs:element name="trendlines" minOccurs="0" maxOccurs="unbounded">
                     <xs:complexType>
-                        <xs:sequence>
+                        <xs:sequence maxOccurs="unbounded" minOccurs="0">
                             <xs:element name="line" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:attribute name="dashgap" type="xs:nonNegativeInteger"/>

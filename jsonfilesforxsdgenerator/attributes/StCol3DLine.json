@@ -2254,7 +2254,7 @@
         "attrs": [
             {
                 "description": "This attribute defines what the particular dataset will be plotted as. Valid values are COLUMN, AREA or LINE.",
-                "range": "COLUMN, AREA or LINE",
+                "range": "Column, Area, Line",
                 "type": "String",
                 "name": "renderAs"
             },

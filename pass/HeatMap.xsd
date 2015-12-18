@@ -4,97 +4,86 @@
     <xs:element name="chart">
         <xs:complexType>
             <xs:choice maxOccurs="unbounded" minOccurs="0">
-                <xs:element name="dataset" minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="rows" minOccurs="0" maxOccurs="unbounded">
                     <xs:complexType>
-                        <xs:sequence maxOccurs="unbounded" minOccurs="0">
-                            <xs:element name="set" minOccurs="0" maxOccurs="unbounded">
+                        <xs:sequence>
+                            <xs:element name="row" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType>
-                                 <xs:attribute name="value" type="xs:string"/>    
-                                <xs:attribute name="valuefont" type="xs:string"/>
-                                <xs:attribute name="valuefontcolor" type="xs:hexBinary"/>
-                                <xs:attribute name="valuefontsize">
-                                    <xs:simpleType>
-                                        <xs:restriction base="xs:nonNegativeInteger">
-                                            <xs:minInclusive value="0"/>
-                                            <xs:maxInclusive value="72"/>
-                                        </xs:restriction>
-                                    </xs:simpleType>
-                                </xs:attribute>
-                                <xs:attribute name="valuefontbold" type="xs:string"/>
-                                <xs:attribute name="valuefontitalic" type="xs:string"/>
-                                <xs:attribute name="valuebgcolor" type="xs:hexBinary"/>
-                                <xs:attribute name="valuebordercolor" type="xs:hexBinary"/>
-                                <xs:attribute name="valuealpha">
-                                    <xs:simpleType>
-                                        <xs:restriction base="xs:nonNegativeInteger">
-                                            <xs:minInclusive value="0"/>
-                                            <xs:maxInclusive value="100"/>
-                                        </xs:restriction>
-                                    </xs:simpleType>
-                                </xs:attribute>
-                                <xs:attribute name="valuefontalpha">
-                                    <xs:simpleType>
-                                        <xs:restriction base="xs:nonNegativeInteger">
-                                            <xs:minInclusive value="0"/>
-                                            <xs:maxInclusive value="100"/>
-                                        </xs:restriction>
-                                    </xs:simpleType>
-                                </xs:attribute>
-                                <xs:attribute name="valuebgalpha">
-                                    <xs:simpleType>
-                                        <xs:restriction base="xs:nonNegativeInteger">
-                                            <xs:minInclusive value="0"/>
-                                            <xs:maxInclusive value="100"/>
-                                        </xs:restriction>
-                                    </xs:simpleType>
-                                </xs:attribute>
-                                <xs:attribute name="valueborderalpha">
-                                    <xs:simpleType>
-                                        <xs:restriction base="xs:nonNegativeInteger">
-                                            <xs:minInclusive value="0"/>
-                                            <xs:maxInclusive value="100"/>
-                                        </xs:restriction>
-                                    </xs:simpleType>
-                                </xs:attribute>
-                                <xs:attribute name="valueborderthickness" type="xs:nonNegativeInteger"/>
-                                <xs:attribute name="valueborderpadding" type="xs:nonNegativeInteger"/>
-                                <xs:attribute name="valueborderradius" type="xs:nonNegativeInteger"/>
-                                <xs:attribute name="valueborderdashed" type="xs:string"/>
-                                <xs:attribute name="valueborderdashgap" type="xs:nonNegativeInteger"/>
-                                <xs:attribute name="valueborderdashlen" type="xs:nonNegativeInteger"/>
+                                    <xs:attribute name="id" type="xs:string"/>
+                                    <xs:attribute name="label" type="xs:string"/>
+                                    <xs:attribute name="showlabel" type="xs:string"/>
                                 </xs:complexType>
                             </xs:element>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="trendlines" minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="columns" minOccurs="0" maxOccurs="unbounded">
                     <xs:complexType>
-                        <xs:sequence maxOccurs="unbounded" minOccurs="0">
-                            <xs:element name="line" minOccurs="0" maxOccurs="unbounded">
+                        <xs:sequence>
+                            <xs:element name="column" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType>
-                                    <xs:attribute name="alpha" type="xs:string"/>
-                                    <xs:attribute name="color" type="xs:hexBinary"/>
-                                    <xs:attribute name="dashgap" type="xs:nonNegativeInteger"/>
-                                    <xs:attribute name="dashlen" type="xs:nonNegativeInteger"/>
-                                    <xs:attribute name="dashed" type="xs:string"/>
-                                    <xs:attribute name="endvalue" type="xs:string"/>
-                                    <xs:attribute name="istrendzone" type="xs:string"/>
-                                    <xs:attribute name="showontop" type="xs:string"/>
-                                    <xs:attribute name="startvalue" type="xs:float"/>
-                                    <xs:attribute name="thickness" type="xs:nonNegativeInteger"/>
+                                    <xs:attribute name="id" type="xs:string"/>
+                                    <xs:attribute name="label" type="xs:string"/>
+                                    <xs:attribute name="showlabel" type="xs:string"/>
                                 </xs:complexType>
                             </xs:element>
                         </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="dataset" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="set" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:attribute name="rowid" type="xs:string"/>
+                                    <xs:attribute name="categoryid" type="xs:string"/>
+                                    <xs:attribute name="columnid" type="xs:string"/>
+                                    <xs:attribute name="colorrangelabel" type="xs:string"/>
+                                    <xs:attribute name="value" type="xs:string"/>
+                                    <xs:attribute name="displayvalue" type="xs:string"/>
+                                    <xs:attribute name="tllabel" type="xs:string"/>
+                                    <xs:attribute name="trlabel" type="xs:string"/>
+                                    <xs:attribute name="bllabel" type="xs:string"/>
+                                    <xs:attribute name="brlabel" type="xs:string"/>
+                                    <xs:attribute name="color" type="xs:hexBinary"/>
+                                    <xs:attribute name="link" type="xs:string"/>
+                                    <xs:attribute name="tooltext" type="xs:string"/>
+                                    <xs:attribute name="showvalue" type="xs:string"/>
+                                    <xs:attribute name="alpha">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:nonNegativeInteger">
+                                                <xs:minInclusive value="0"/>
+                                                <xs:maxInclusive value="100"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="colorrange" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="color" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:attribute name="code" type="xs:hexBinary"/>
+                                    <xs:attribute name="label" type="xs:string"/>
+                                    <xs:attribute name="maxvalue" type="xs:string"/>
+                                    <xs:attribute name="minvalue" type="xs:string"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="code" type="xs:hexBinary"/>
+                        <xs:attribute name="endlabel" type="xs:string"/>
+                        <xs:attribute name="gradient" type="xs:string"/>
+                        <xs:attribute name="mapbypercent" type="xs:string"/>
+                        <xs:attribute name="minvalue" type="xs:string"/>
+                        <xs:attribute name="startlabel" type="xs:string"/>
                     </xs:complexType>
                 </xs:element>
             </xs:choice>
             <xs:attribute name="animation" type="xs:string"/>
-            <xs:attribute name="connectnulldata" type="xs:string"/>
-            <xs:attribute name="setadaptiveymin" type="xs:string"/>
-            <xs:attribute name="yaxisminvalue" type="xs:nonNegativeInteger"/>
-            <xs:attribute name="yaxismaxvalue" type="xs:nonNegativeInteger"/>
-            <xs:attribute name="clickurl" type="xs:anyURI"/>
-            <xs:attribute name="clickurloverridesplotlinks" type="xs:string"/>
             <xs:attribute name="palette">
                 <xs:simpleType>
                     <xs:restriction base="xs:nonNegativeInteger">
@@ -103,11 +92,39 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:attribute>
-            <xs:attribute name="palettethemecolor" type="xs:hexBinary"/>
-            <xs:attribute name="annrenderdelay" type="xs:string"/>
-            <xs:attribute name="showprintmenuitem" type="xs:string"/>
-            <xs:attribute name="manageresize" type="xs:string"/>
+            <xs:attribute name="palettecolors" type="xs:string"/>
+            <xs:attribute name="showlabels" type="xs:string"/>
+            <xs:attribute name="maxlabelheight" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="maxlabelwidthpercent" type="xs:string"/>
             <xs:attribute name="useellipseswhenoverflow" type="xs:string"/>
+            <xs:attribute name="trtype" type="xs:string"/>
+            <xs:attribute name="tltype" type="xs:string"/>
+            <xs:attribute name="brtype" type="xs:string"/>
+            <xs:attribute name="bltype" type="xs:string"/>
+            <xs:attribute name="rotatexaxislabels" type="xs:string"/>
+            <xs:attribute name="showyaxislabels" type="xs:string"/>
+            <xs:attribute name="showxaxislabels" type="xs:string"/>
+            <xs:attribute name="staggerlines">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="2"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="showvalues" type="xs:string"/>
+            <xs:attribute name="showlimits" type="xs:string"/>
+            <xs:attribute name="showdivlinevalues" type="xs:string"/>
+            <xs:attribute name="showshadow" type="xs:string"/>
+            <xs:attribute name="rotateyaxisname" type="xs:string"/>
+            <xs:attribute name="yaxisnamewidth" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="clickurl" type="xs:string"/>
+            <xs:attribute name="clickurloverridesplotlinks" type="xs:string"/>
+            <xs:attribute name="interactiveanimationduration" type="xs:string"/>
+            <xs:attribute name="mapbycategory" type="xs:string"/>
+            <xs:attribute name="plotfillalpha" type="xs:string"/>
+            <xs:attribute name="unescapelinks" type="xs:string"/>
+            <xs:attribute name="showprintmenuitem" type="xs:string"/>
+            <xs:attribute name="placexaxislabelsontop" type="xs:string"/>
             <xs:attribute name="hasrtltext" type="xs:string"/>
             <xs:attribute name="basechartmessage" type="xs:string"/>
             <xs:attribute name="basechartmessagefont" type="xs:string"/>
@@ -415,6 +432,8 @@
             </xs:attribute>
             <xs:attribute name="caption" type="xs:string"/>
             <xs:attribute name="subcaption" type="xs:string"/>
+            <xs:attribute name="xaxisname" type="xs:string"/>
+            <xs:attribute name="yaxisname" type="xs:string"/>
             <xs:attribute name="captionalignment">
                 <xs:simpleType>
                     <xs:restriction base="xs:string">
@@ -449,27 +468,20 @@
             <xs:attribute name="subcaptionfontbold" type="xs:string"/>
             <xs:attribute name="aligncaptionwithcanvas" type="xs:string"/>
             <xs:attribute name="captionhorizontalpadding" type="xs:nonNegativeInteger"/>
-            <xs:attribute name="formatnumber" type="xs:string"/>
-            <xs:attribute name="numberprefix" type="xs:string"/>
-            <xs:attribute name="numbersuffix" type="xs:string"/>
-            <xs:attribute name="decimals" type="xs:string"/>
-            <xs:attribute name="forcedecimals" type="xs:string"/>
-            <xs:attribute name="formatnumberscale" type="xs:string"/>
-            <xs:attribute name="defaultnumberscale" type="xs:string"/>
-            <xs:attribute name="numberscaleunit" type="xs:string"/>
-            <xs:attribute name="numberscalevalue" type="xs:string"/>
-            <xs:attribute name="forcenumberscale" type="xs:string"/>
-            <xs:attribute name="scalerecursively" type="xs:string"/>
-            <xs:attribute name="maxscalerecursion" type="xs:string"/>
-            <xs:attribute name="scaleseparator" type="xs:string"/>
-            <xs:attribute name="decimalseparator" type="xs:string"/>
-            <xs:attribute name="thousandseparator" type="xs:string"/>
-            <xs:attribute name="thousandseparatorposition" type="xs:string"/>
-            <xs:attribute name="indecimalseparator" type="xs:string"/>
-            <xs:attribute name="inthousandseparator" type="xs:string"/>
-            <xs:attribute name="linecolor" type="xs:hexBinary"/>
-            <xs:attribute name="linethickness" type="xs:nonNegativeInteger"/>
-            <xs:attribute name="linealpha">
+            <xs:attribute name="xaxisnamefontcolor" type="xs:hexBinary"/>
+            <xs:attribute name="xaxisnamefontsize">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="72"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="xaxisnamefontbold" type="xs:string"/>
+            <xs:attribute name="xaxisnamefontitalic" type="xs:string"/>
+            <xs:attribute name="xaxisnamebgcolor" type="xs:hexBinary"/>
+            <xs:attribute name="xaxisnamebordercolor" type="xs:hexBinary"/>
+            <xs:attribute name="xaxisnamealpha">
                 <xs:simpleType>
                     <xs:restriction base="xs:nonNegativeInteger">
                         <xs:minInclusive value="0"/>
@@ -477,11 +489,7 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:attribute>
-            <xs:attribute name="drawanchors" type="xs:string"/>
-            <xs:attribute name="anchorsides" type="xs:string"/>
-            <xs:attribute name="anchorradius" type="xs:nonNegativeInteger"/>
-            <xs:attribute name="anchorcolor" type="xs:hexBinary"/>
-            <xs:attribute name="anchoralpha">
+            <xs:attribute name="xaxisnamefontalpha">
                 <xs:simpleType>
                     <xs:restriction base="xs:nonNegativeInteger">
                         <xs:minInclusive value="0"/>
@@ -489,8 +497,7 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:attribute>
-            <xs:attribute name="anchorimageurl" type="xs:string"/>
-            <xs:attribute name="anchorimagealpha">
+            <xs:attribute name="xaxisnamebgalpha">
                 <xs:simpleType>
                     <xs:restriction base="xs:nonNegativeInteger">
                         <xs:minInclusive value="0"/>
@@ -498,7 +505,7 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:attribute>
-            <xs:attribute name="anchorimagescale">
+            <xs:attribute name="xaxisnameborderalpha">
                 <xs:simpleType>
                     <xs:restriction base="xs:nonNegativeInteger">
                         <xs:minInclusive value="0"/>
@@ -506,20 +513,68 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:attribute>
-            <xs:attribute name="opencolor" type="xs:hexBinary"/>
-            <xs:attribute name="closecolor" type="xs:hexBinary"/>
-            <xs:attribute name="highcolor" type="xs:hexBinary"/>
-            <xs:attribute name="lowcolor" type="xs:hexBinary"/>
-            <xs:attribute name="showopenanchor" type="xs:string"/>
-            <xs:attribute name="showcloseanchor" type="xs:string"/>
-            <xs:attribute name="showhighanchor" type="xs:string"/>
-            <xs:attribute name="showlowanchor" type="xs:string"/>
-            <xs:attribute name="showopenvalue" type="xs:string"/>
-            <xs:attribute name="showclosevalue" type="xs:string"/>
-            <xs:attribute name="showhighlowvalue" type="xs:string"/>
-            <xs:attribute name="periodlength" type="xs:string"/>
-            <xs:attribute name="periodcolor" type="xs:hexBinary"/>
-            <xs:attribute name="periodalpha">
+            <xs:attribute name="xaxisnameborderpadding" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="xaxisnameborderradius" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="xaxisnameborderthickness" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="xaxisnameborderdashed" type="xs:string"/>
+            <xs:attribute name="xaxisnameborderdashlen" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="xaxisnameborderdashgap" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="yaxisnamefont" type="xs:string"/>
+            <xs:attribute name="yaxisnamefontcolor" type="xs:hexBinary"/>
+            <xs:attribute name="yaxisnamefontsize">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="72"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="yaxisnamefontbold" type="xs:string"/>
+            <xs:attribute name="yaxisnamefontitalic" type="xs:string"/>
+            <xs:attribute name="yaxisnamebgcolor" type="xs:hexBinary"/>
+            <xs:attribute name="yaxisnamebordercolor" type="xs:hexBinary"/>
+            <xs:attribute name="yaxisnamealpha">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="yaxisnamefontalpha">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="yaxisnamebgalpha">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="yaxisnameborderalpha">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="yaxisnameborderpadding" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="yaxisnameborderradius" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="yaxisnameborderthickness" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="yaxisnameborderdashed" type="xs:string"/>
+            <xs:attribute name="yaxisnameborderdashlen" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="yaxisnameborderdashgap" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="showborder" type="xs:string"/>
+            <xs:attribute name="bordercolor" type="xs:hexBinary"/>
+            <xs:attribute name="borderthickness" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="borderalpha">
                 <xs:simpleType>
                     <xs:restriction base="xs:nonNegativeInteger">
                         <xs:minInclusive value="0"/>
@@ -542,17 +597,6 @@
                     <xs:restriction base="xs:nonNegativeInteger">
                         <xs:minInclusive value="0"/>
                         <xs:maxInclusive value="360"/>
-                    </xs:restriction>
-                </xs:simpleType>
-            </xs:attribute>
-            <xs:attribute name="showborder" type="xs:string"/>
-            <xs:attribute name="bordercolor" type="xs:hexBinary"/>
-            <xs:attribute name="borderthickness" type="xs:nonNegativeInteger"/>
-            <xs:attribute name="borderalpha">
-                <xs:simpleType>
-                    <xs:restriction base="xs:nonNegativeInteger">
-                        <xs:minInclusive value="0"/>
-                        <xs:maxInclusive value="100"/>
                     </xs:restriction>
                 </xs:simpleType>
             </xs:attribute>
@@ -580,9 +624,9 @@
             <xs:attribute name="bgimagevalign">
                 <xs:simpleType>
                     <xs:restriction base="xs:string">
-                        <xs:enumeration value="top"/>
-                        <xs:enumeration value="middle"/>
-                        <xs:enumeration value="bottom"/>
+                        <xs:enumeration value="left"/>
+                        <xs:enumeration value="center"/>
+                        <xs:enumeration value="right"/>
                     </xs:restriction>
                 </xs:simpleType>
             </xs:attribute>
@@ -590,7 +634,7 @@
                 <xs:simpleType>
                     <xs:restriction base="xs:string">
                         <xs:enumeration value="left"/>
-                        <xs:enumeration value="middle"/>
+                        <xs:enumeration value="center"/>
                         <xs:enumeration value="right"/>
                     </xs:restriction>
                 </xs:simpleType>
@@ -603,6 +647,43 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:attribute>
+            <xs:attribute name="xaxislinecolor" type="xs:hexBinary"/>
+            <xs:attribute name="canvasbgcolor" type="xs:hexBinary"/>
+            <xs:attribute name="canvasbgalpha">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="canvasbgratio" type="xs:string"/>
+            <xs:attribute name="canvasbgangle">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="360"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="canvasbordercolor" type="xs:hexBinary"/>
+            <xs:attribute name="canvasborderthickness">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="5"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="canvasborderalpha">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="showvlinelabelborder" type="xs:string"/>
             <xs:attribute name="logourl" type="xs:string"/>
             <xs:attribute name="logoposition">
                 <xs:simpleType>
@@ -627,11 +708,42 @@
                 <xs:simpleType>
                     <xs:restriction base="xs:nonNegativeInteger">
                         <xs:minInclusive value="0"/>
-                        <xs:maxInclusive value="100"/>
+                        <xs:maxInclusive value="300"/>
                     </xs:restriction>
                 </xs:simpleType>
             </xs:attribute>
             <xs:attribute name="logolink" type="xs:string"/>
+            <xs:attribute name="showplotborder" type="xs:string"/>
+            <xs:attribute name="plotbordercolor" type="xs:hexBinary"/>
+            <xs:attribute name="plotborderthickness">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="5"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="plotborderalpha">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="plotborderdashed" type="xs:string"/>
+            <xs:attribute name="plotborderdashlen" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="plotborderdashgap" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="plotfillangle">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="360"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="plotfillratio" type="xs:string"/>
+            <xs:attribute name="plotgradientcolor" type="xs:string"/>
             <xs:attribute name="valuefont" type="xs:string"/>
             <xs:attribute name="valuefontcolor" type="xs:hexBinary"/>
             <xs:attribute name="valuefontsize">
@@ -684,29 +796,192 @@
             <xs:attribute name="valueborderdashed" type="xs:string"/>
             <xs:attribute name="valueborderdashgap" type="xs:nonNegativeInteger"/>
             <xs:attribute name="valueborderdashlen" type="xs:nonNegativeInteger"/>
-            <xs:attribute name="basefont" type="xs:string"/>
-            <xs:attribute name="basefontsize" type="xs:string"/>
-            <xs:attribute name="basefontcolor" type="xs:hexBinary"/>
-            <xs:attribute name="showtooltip" type="xs:string"/>
-            <xs:attribute name="tooltipbgcolor" type="xs:hexBinary"/>
-            <xs:attribute name="tooltipcolor" type="xs:hexBinary"/>
-            <xs:attribute name="tooltipbordercolor" type="xs:hexBinary"/>
-            <xs:attribute name="showtooltipshadow" type="xs:string"/>
+            <xs:attribute name="hdivlinecolor" type="xs:hexBinary"/>
+            <xs:attribute name="hdivlinethickness">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="1"/>
+                        <xs:maxInclusive value="5"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="hdivlinealpha">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="hdivlinedashed" type="xs:string"/>
+            <xs:attribute name="hdivlinedashlen" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="hdivlinedashgap" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="vdivlinecolor" type="xs:hexBinary"/>
+            <xs:attribute name="vdivlinethickness">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="1"/>
+                        <xs:maxInclusive value="5"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="vdivlinealpha">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="vdivlinedashed" type="xs:string"/>
+            <xs:attribute name="vdivlineisdashlen" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="vdivlinedashgap" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="showalternatehgridcolor" type="xs:string"/>
+            <xs:attribute name="alternatehgridcolor" type="xs:hexBinary"/>
+            <xs:attribute name="alternatehgridalpha">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="showalternatevgridcolor" type="xs:string"/>
+            <xs:attribute name="alternatevgridcolor" type="xs:hexBinary"/>
+            <xs:attribute name="alternatevgridalpha">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
             <xs:attribute name="captionpadding" type="xs:nonNegativeInteger"/>
-            <xs:attribute name="valuepadding" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="xaxisnamepadding" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="yaxisnamepadding" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="labelxpadding" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="labelypadding" type="xs:nonNegativeInteger"/>
             <xs:attribute name="chartleftmargin" type="xs:nonNegativeInteger"/>
             <xs:attribute name="chartrightmargin" type="xs:nonNegativeInteger"/>
             <xs:attribute name="charttopmargin" type="xs:nonNegativeInteger"/>
             <xs:attribute name="chartbottommargin" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="legendpadding" type="xs:nonNegativeInteger"/>
             <xs:attribute name="canvasleftmargin" type="xs:nonNegativeInteger"/>
             <xs:attribute name="canvasrightmargin" type="xs:nonNegativeInteger"/>
-            <xs:attribute name="trendvaluefont" type="xs:string"/>
-            <xs:attribute name="trendvaluefontsize" type="xs:string"/>
-            <xs:attribute name="trendvaluefontbold" type="xs:string"/>
-            <xs:attribute name="trendvaluefontitalic" type="xs:string"/>
-            <xs:attribute name="trendvaluebgcolor" type="xs:hexBinary"/>
-            <xs:attribute name="trendvaluebordercolor" type="xs:hexBinary"/>
-            <xs:attribute name="trendvaluealpha">
+            <xs:attribute name="canvastopmargin" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="canvasbottommargin" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="showtooltip" type="xs:string"/>
+            <xs:attribute name="tooltipbgcolor" type="xs:hexBinary"/>
+            <xs:attribute name="tooltipcolor" type="xs:hexBinary"/>
+            <xs:attribute name="tooltipbordercolor" type="xs:hexBinary"/>
+            <xs:attribute name="tooltipsepchar" type="xs:string"/>
+            <xs:attribute name="showcolumnidintooltip" type="xs:string"/>
+            <xs:attribute name="showrowidintooltip" type="xs:string"/>
+            <xs:attribute name="showtooltipshadow" type="xs:string"/>
+            <xs:attribute name="tlfont" type="xs:string"/>
+            <xs:attribute name="tlfontsize">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="72"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="tlfontcolor" type="xs:hexBinary"/>
+            <xs:attribute name="trfont" type="xs:string"/>
+            <xs:attribute name="trfontsize">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="72"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="trfontcolor" type="xs:hexBinary"/>
+            <xs:attribute name="blfont" type="xs:string"/>
+            <xs:attribute name="blfontsize">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="72"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="blfontcolor" type="xs:hexBinary"/>
+            <xs:attribute name="brfont" type="xs:string"/>
+            <xs:attribute name="brfontsize">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="72"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="brfontcolor" type="xs:hexBinary"/>
+            <xs:attribute name="showhovereffect" type="xs:string"/>
+            <xs:attribute name="plothovereffect" type="xs:string"/>
+            <xs:attribute name="plotfillhovercolor" type="xs:hexBinary"/>
+            <xs:attribute name="plotfillhoveralpha">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="1"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="showlegend" type="xs:string"/>
+            <xs:attribute name="legenditemfontbold" type="xs:string"/>
+            <xs:attribute name="legenditemfont" type="xs:string"/>
+            <xs:attribute name="legenditemfontsize">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="72"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="legenditemfontcolor" type="xs:hexBinary"/>
+            <xs:attribute name="legendcaption" type="xs:string"/>
+            <xs:attribute name="legenditemhoverfontcolor" type="xs:hexBinary"/>
+            <xs:attribute name="legendcaptionalignment">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="left"/>
+                        <xs:enumeration value="center"/>
+                        <xs:enumeration value="right"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="legendcaptionfontbold" type="xs:string"/>
+            <xs:attribute name="legendcaptionfont" type="xs:string"/>
+            <xs:attribute name="legendcaptionfontsize">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="72"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="legendcaptionfontcolor" type="xs:hexBinary"/>
+            <xs:attribute name="legendiconscale">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="1"/>
+                        <xs:maxInclusive value="5"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="legenditemhiddencolor" type="xs:hexBinary"/>
+            <xs:attribute name="legendposition">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="BOTTOM"/>
+                        <xs:enumeration value="RIGHT"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="legendbgcolor" type="xs:hexBinary"/>
+            <xs:attribute name="legendbgalpha">
                 <xs:simpleType>
                     <xs:restriction base="xs:nonNegativeInteger">
                         <xs:minInclusive value="0"/>
@@ -714,7 +989,9 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:attribute>
-            <xs:attribute name="trendvaluebgalpha">
+            <xs:attribute name="legendbordercolor" type="xs:hexBinary"/>
+            <xs:attribute name="legendborderthickness" type="xs:nonNegativeInteger"/>
+            <xs:attribute name="legendborderalpha">
                 <xs:simpleType>
                     <xs:restriction base="xs:nonNegativeInteger">
                         <xs:minInclusive value="0"/>
@@ -722,7 +999,23 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:attribute>
-            <xs:attribute name="trendvalueborderalpha">
+            <xs:attribute name="legendshadow" type="xs:string"/>
+            <xs:attribute name="legendallowdrag" type="xs:string"/>
+            <xs:attribute name="legendscrollbgcolor" type="xs:hexBinary"/>
+            <xs:attribute name="reverselegend" type="xs:string"/>
+            <xs:attribute name="interactivelegend" type="xs:string"/>
+            <xs:attribute name="legendnumcolumns" type="xs:string"/>
+            <xs:attribute name="minimisewrappinginlegend" type="xs:string"/>
+            <xs:attribute name="legendpointerwidth" type="xs:string"/>
+            <xs:attribute name="legendpointerheight" type="xs:string"/>
+            <xs:attribute name="legendscalelinecolor" type="xs:hexBinary"/>
+            <xs:attribute name="legendscalelinealpha" type="xs:string"/>
+            <xs:attribute name="legendscalelinethickness" type="xs:string"/>
+            <xs:attribute name="autoorderlegendicon" type="xs:string"/>
+            <xs:attribute name="drawcustomlegendicon" type="xs:string"/>
+            <xs:attribute name="legendiconbordercolor" type="xs:hexBinary"/>
+            <xs:attribute name="legendiconbgcolor" type="xs:hexBinary"/>
+            <xs:attribute name="legendiconalpha">
                 <xs:simpleType>
                     <xs:restriction base="xs:nonNegativeInteger">
                         <xs:minInclusive value="0"/>
@@ -730,12 +1023,69 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:attribute>
-            <xs:attribute name="trendvalueborderpadding" type="xs:string"/>
-            <xs:attribute name="trendvalueborderradius" type="xs:string"/>
-            <xs:attribute name="trendvalueborderthickness" type="xs:string"/>
-            <xs:attribute name="trendvalueborderdashed" type="xs:string"/>
-            <xs:attribute name="trendvalueborderdashlen" type="xs:string"/>
-            <xs:attribute name="trendvalueborderdashgap" type="xs:string"/>
+            <xs:attribute name="legendiconbgalpha">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="legendiconsides" type="xs:string"/>
+            <xs:attribute name="legendiconborderthickness">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="1"/>
+                        <xs:maxInclusive value="5"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="legendiconstartangle" type="xs:string"/>
+            <xs:attribute name="formatnumber" type="xs:string"/>
+            <xs:attribute name="formatnumberscale" type="xs:string"/>
+            <xs:attribute name="defaultnumberscale" type="xs:string"/>
+            <xs:attribute name="numberscaleunit" type="xs:string"/>
+            <xs:attribute name="numberscalevalue" type="xs:string"/>
+            <xs:attribute name="forcenumberscale" type="xs:string"/>
+            <xs:attribute name="scalerecursively" type="xs:string"/>
+            <xs:attribute name="maxscalerecursion" type="xs:string"/>
+            <xs:attribute name="scaleseparator" type="xs:string"/>
+            <xs:attribute name="numberprefix" type="xs:string"/>
+            <xs:attribute name="numbersuffix" type="xs:string"/>
+            <xs:attribute name="decimalseparator" type="xs:string"/>
+            <xs:attribute name="thousandseparator" type="xs:string"/>
+            <xs:attribute name="thousandseparatorposition" type="xs:string"/>
+            <xs:attribute name="indecimalseparator" type="xs:string"/>
+            <xs:attribute name="inthousandseparator" type="xs:string"/>
+            <xs:attribute name="decimals">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="10"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="forcedecimals" type="xs:string"/>
+            <xs:attribute name="basefont" type="xs:string"/>
+            <xs:attribute name="basefontsize">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="72"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="basefontcolor" type="xs:hexBinary"/>
+            <xs:attribute name="outcnvbasefont" type="xs:string"/>
+            <xs:attribute name="outcnvbasefontsize">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="72"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="outcnvbasefontcolor" type="xs:hexBinary"/>
         </xs:complexType>
     </xs:element>
 </xs:schema>

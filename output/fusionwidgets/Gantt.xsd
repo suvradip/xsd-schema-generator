@@ -6,7 +6,7 @@
             <xs:choice maxOccurs="unbounded" minOccurs="0">
                 <xs:element name="categories" minOccurs="0" maxOccurs="unbounded">
                     <xs:complexType>
-                        <xs:sequence>
+                        <xs:sequence maxOccurs="unbounded" minOccurs="0">
                             <xs:element name="category" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:attribute name="align">
@@ -109,7 +109,7 @@
                 </xs:element>
                 <xs:element name="processes" minOccurs="0" maxOccurs="unbounded">
                     <xs:complexType>
-                        <xs:sequence>
+                        <xs:sequence maxOccurs="unbounded" minOccurs="0">
                             <xs:element name="process" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:attribute name="align">
@@ -159,7 +159,7 @@
                                             </xs:restriction>
                                         </xs:simpleType>
                                     </xs:attribute>
-                                    <xs:attribute name="height" type="xs:nonNegativeInteger"/>
+                                    <xs:attribute name="height" type="xs:string"/>
                                 </xs:complexType>
                             </xs:element>
                         </xs:sequence>
@@ -254,7 +254,7 @@
                 </xs:element>
                 <xs:element name="tasks" minOccurs="0" maxOccurs="unbounded">
                     <xs:complexType>
-                        <xs:sequence>
+                        <xs:sequence maxOccurs="unbounded" minOccurs="0">
                             <xs:element name="task" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:attribute name="alpha">
@@ -281,7 +281,7 @@
                                     <xs:attribute name="font" type="xs:string"/>
                                     <xs:attribute name="fontcolor" type="xs:hexBinary"/>
                                     <xs:attribute name="fontsize" type="xs:string"/>
-                                    <xs:attribute name="height" type="xs:nonNegativeInteger"/>
+                                    <xs:attribute name="height" type="xs:string"/>
                                     <xs:attribute name="hoverfillalpha">
                                         <xs:simpleType>
                                             <xs:restriction base="xs:nonNegativeInteger">
@@ -307,7 +307,7 @@
                                     <xs:attribute name="slackhoverfillcolor" type="xs:string"/>
                                     <xs:attribute name="start" type="xs:string"/>
                                     <xs:attribute name="tooltext" type="xs:string"/>
-                                    <xs:attribute name="toppadding" type="xs:nonNegativeInteger"/>
+                                    <xs:attribute name="toppadding" type="xs:string"/>
                                 </xs:complexType>
                             </xs:element>
                         </xs:sequence>
@@ -537,7 +537,7 @@
                 </xs:element>
                 <xs:element name="connectors" minOccurs="0" maxOccurs="unbounded">
                     <xs:complexType>
-                        <xs:sequence>
+                        <xs:sequence maxOccurs="unbounded" minOccurs="0">
                             <xs:element name="connector" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:attribute name="link" type="xs:string"/>
@@ -596,7 +596,7 @@
                 </xs:element>
                 <xs:element name="milestones" minOccurs="0" maxOccurs="unbounded">
                     <xs:complexType>
-                        <xs:sequence>
+                        <xs:sequence maxOccurs="unbounded" minOccurs="0">
                             <xs:element name="milestone" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:attribute name="alpha">
@@ -646,7 +646,7 @@
                 </xs:element>
                 <xs:element name="trendlines" minOccurs="0" maxOccurs="unbounded">
                     <xs:complexType>
-                        <xs:sequence>
+                        <xs:sequence maxOccurs="unbounded" minOccurs="0">
                             <xs:element name="line" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:attribute name="alpha">
@@ -687,7 +687,7 @@
                 </xs:element>
                 <xs:element name="legend" minOccurs="0" maxOccurs="unbounded">
                     <xs:complexType>
-                        <xs:sequence>
+                        <xs:sequence maxOccurs="unbounded" minOccurs="0">
                             <xs:element name="item" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:attribute name="color" type="xs:hexBinary"/>
