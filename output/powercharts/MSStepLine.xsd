@@ -1139,124 +1139,22 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:attribute>
-            <xs:attribute name="anchoralpha">
-                <xs:simpleType>
-                    <xs:restriction base="xs:nonNegativeInteger">
-                        <xs:minInclusive value="0"/>
-                        <xs:maxInclusive value="100"/>
-                    </xs:restriction>
-                </xs:simpleType>
-            </xs:attribute>
-            <xs:attribute name="anchorbgalpha">
-                <xs:simpleType>
-                    <xs:restriction base="xs:nonNegativeInteger">
-                        <xs:minInclusive value="0"/>
-                        <xs:maxInclusive value="100"/>
-                    </xs:restriction>
-                </xs:simpleType>
-            </xs:attribute>
-            <xs:attribute name="anchorbgcolor" type="xs:hexBinary"/>
-            <xs:attribute name="anchorbordercolor" type="xs:hexBinary"/>
-            <xs:attribute name="anchorborderthickness" type="xs:nonNegativeInteger"/>
-            <xs:attribute name="anchorradius" type="xs:nonNegativeInteger"/>
-            <xs:attribute name="anchorsides">
-                <xs:simpleType>
-                    <xs:restriction base="xs:nonNegativeInteger">
-                        <xs:minInclusive value="3"/>
-                        <xs:maxInclusive value="20"/>
-                    </xs:restriction>
-                </xs:simpleType>
-            </xs:attribute>
             <xs:attribute name="color" type="xs:hexBinary"/>
             <xs:attribute name="dashed" type="xs:string"/>
-            <xs:attribute name="drawanchors" type="xs:string"/>
             <xs:attribute name="includeinlegend" type="xs:string"/>
-            <xs:attribute name="linedashgap" type="xs:nonNegativeInteger"/>
-            <xs:attribute name="linedashlen" type="xs:nonNegativeInteger"/>
-            <xs:attribute name="linethickness" type="xs:nonNegativeInteger"/>
-            <xs:attribute name="seriesname" type="xs:string"/>
-            <xs:attribute name="showvalues" type="xs:string"/>
-            <xs:attribute name="valueposition">
-                <xs:simpleType>
-                    <xs:restriction base="xs:string">
-                        <xs:enumeration value="ABOVE"/>
-                        <xs:enumeration value="BELOW"/>
-                        <xs:enumeration value="AUTO"/>
-                    </xs:restriction>
-                </xs:simpleType>
-            </xs:attribute>
-            <xs:attribute name="alpha">
-                <xs:simpleType>
-                    <xs:restriction base="xs:nonNegativeInteger">
-                        <xs:minInclusive value="0"/>
-                        <xs:maxInclusive value="100"/>
-                    </xs:restriction>
-                </xs:simpleType>
-            </xs:attribute>
-            <xs:attribute name="anchoralpha">
-                <xs:simpleType>
-                    <xs:restriction base="xs:nonNegativeInteger">
-                        <xs:minInclusive value="0"/>
-                        <xs:maxInclusive value="100"/>
-                    </xs:restriction>
-                </xs:simpleType>
-            </xs:attribute>
-            <xs:attribute name="anchorbgalpha">
-                <xs:simpleType>
-                    <xs:restriction base="xs:nonNegativeInteger">
-                        <xs:minInclusive value="0"/>
-                        <xs:maxInclusive value="100"/>
-                    </xs:restriction>
-                </xs:simpleType>
-            </xs:attribute>
-            <xs:attribute name="anchorbgcolor" type="xs:hexBinary"/>
-            <xs:attribute name="anchorbordercolor" type="xs:hexBinary"/>
-            <xs:attribute name="anchorborderthickness" type="xs:nonNegativeInteger"/>
-            <xs:attribute name="anchorradius" type="xs:nonNegativeInteger"/>
-            <xs:attribute name="anchorsides">
-                <xs:simpleType>
-                    <xs:restriction base="xs:nonNegativeInteger">
-                        <xs:minInclusive value="3"/>
-                        <xs:maxInclusive value="20"/>
-                    </xs:restriction>
-                </xs:simpleType>
-            </xs:attribute>
-            <xs:attribute name="color" type="xs:hexBinary"/>
-            <xs:attribute name="dashed" type="xs:string"/>
             <xs:attribute name="displayvalue" type="xs:string"/>
             <xs:attribute name="link" type="xs:string"/>
             <xs:attribute name="showvalue" type="xs:string"/>
             <xs:attribute name="tooltext" type="xs:string"/>
             <xs:attribute name="value" type="xs:string"/>
-            <xs:attribute name="valueposition">
-                <xs:simpleType>
-                    <xs:restriction base="xs:string">
-                        <xs:enumeration value="ABOVE"/>
-                        <xs:enumeration value="BELOW"/>
-                        <xs:enumeration value="AUTO"/>
-                    </xs:restriction>
-                </xs:simpleType>
-            </xs:attribute>
             <xs:attribute name="startvalue" type="xs:float"/>
             <xs:attribute name="endvalue" type="xs:nonNegativeInteger"/>
-            <xs:attribute name="displayvalue" type="xs:string"/>
-            <xs:attribute name="color" type="xs:string"/>
             <xs:attribute name="istrendzone" type="xs:string"/>
             <xs:attribute name="showontop" type="xs:string"/>
             <xs:attribute name="thickness" type="xs:nonNegativeInteger"/>
-            <xs:attribute name="alpha">
-                <xs:simpleType>
-                    <xs:restriction base="xs:nonNegativeInteger">
-                        <xs:minInclusive value="0"/>
-                        <xs:maxInclusive value="100"/>
-                    </xs:restriction>
-                </xs:simpleType>
-            </xs:attribute>
-            <xs:attribute name="dashed" type="xs:string"/>
             <xs:attribute name="dashlen" type="xs:nonNegativeInteger"/>
             <xs:attribute name="dashgap" type="xs:nonNegativeInteger"/>
             <xs:attribute name="valueonright" type="xs:string"/>
-            <xs:attribute name="tooltext" type="xs:string"/>
             <xs:attribute name="trendvaluefont" type="xs:string"/>
             <xs:attribute name="trendvaluefontsize" type="xs:string"/>
             <xs:attribute name="trendvaluefontbold" type="xs:string"/>

@@ -2486,12 +2486,6 @@
                 "name": "vLine"
             },
             {
-                "description": "Set this attribute to __true__ to render a vertical data separator line.",
-                "range": "",
-                "type": "String",
-                "name": "vLine"
-            },
-            {
                 "description": "This attribute defines the color of vertical separator line",
                 "range": "Hex Color Code",
                 "type": "Color",

@@ -62,7 +62,6 @@
                             <xs:element name="vline" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:attribute name="label" type="xs:string"/>
-                                    <xs:attribute name="label" type="xs:string"/>
                                     <xs:attribute name="color" type="xs:hexBinary"/>
                                     <xs:attribute name="thickness" type="xs:nonNegativeInteger"/>
                                     <xs:attribute name="alpha">
